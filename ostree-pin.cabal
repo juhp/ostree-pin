@@ -1,0 +1,44 @@
+cabal-version:       2.0
+name:                ostree-pin
+version:             0.0.0
+synopsis:            Tool to pin ostree deployments
+description:         Tool to pin ostree deployments
+homepage:            https://github.com/juhp/ostree-pin
+bug-reports:         https://github.com/juhp/ostree-pin/issues
+license:             GPL-3
+license-file:        LICENSE
+author:              Jens Petersen
+maintainer:          juhpetersen@gmail.com
+copyright:           2019 Jens Petersen
+build-type:          Simple
+extra-doc-files:     README.md
+                   , CHANGELOG.md
+tested-with:         GHC == 8.4.4, GHC == 8.6.4
+
+source-repository head
+  type:                git
+  location:            https://github.com/juhp/ostree-pin.git
+
+executable ostree-pin
+  hs-source-dirs:      app
+  main-is:             Main.hs
+
+  build-depends:       base-noprelude >= 4.11.1.0 && < 4.13
+                     
+                     , basic-prelude
+
+  ghc-options:         -Wall
+                       -threaded
+                       -rtsopts
+                       -with-rtsopts=-N
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
+  default-extensions:  OverloadedStrings
