@@ -8,12 +8,14 @@
 
 ## Summary
 
-A small util to "pin" the current ostree deployment.
+A small utility to "pin" the current ostree deployment.\
 eg useful on Fedora Silverblue for preserving
-the current booted deployment image.
+the current booted deployment image.\
+The idea is to run this before booting into a new staged deployment.
 
 ## Install
-Needs the Fedora `ostree-devel` packaage or `libostree-dev` (Debian/Ubuntu).
+Needs the Fedora `ostree-devel` package or `libostree-dev` (Debian/Ubuntu).
+Also needs ghc and cabal-install.
 
 $ cabal install
 
@@ -21,4 +23,4 @@ $ cabal install
 
 $ sudo ostree-pin
 
-Sets the current deployment to pinned.
+Sets the current deployment to pinned, and unpins the previously pinned deployment. If more than one deployment was pinned it doesn't touch them.
