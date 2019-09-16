@@ -6,4 +6,19 @@
 [![Stackage Nightly](http://stackage.org/package/ostree-pin/badge/nightly)](http://stackage.org/nightly/package/ostree-pin)
 [![Build status](https://secure.travis-ci.org/juhp/ostree-pin.svg)](https://travis-ci.org/juhp/ostree-pin)
 
-Tool to pin ostree deployments
+## Summary
+
+A small util to "pin" the current ostree deployment.
+eg useful on Fedora Silverblue for preserving
+the current booted deployment image.
+
+## Install
+Needs the Fedora `ostree-devel` packaage or `libostree-dev` (Debian/Ubuntu).
+
+$ cabal install
+
+## Usage
+
+$ sudo ostree-pin
+
+Sets the current deployment to pinned.
