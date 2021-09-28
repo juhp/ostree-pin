@@ -11,8 +11,8 @@ fn main() {
             .filter(|d| d.is_pinned())
             .try_for_each(|pin| sysroot.deployment_set_pinned(pin, false))
             .expect("failed to unpin deployments");
+        sysroot
+            .deployment_set_pinned(&booted, true)
+            .expect("failed to pin booted");
     }
-    sysroot
-        .deployment_set_pinned(&booted, true)
-        .expect("failed to pin booted");
 }
