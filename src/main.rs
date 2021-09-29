@@ -7,7 +7,7 @@ fn main() {
     if !(booted.is_pinned()) {
         sysroot
             .deployments()
-            .iter_mut()
+            .iter()
             .filter(|d| d.is_pinned())
             .try_for_each(|pin| sysroot.deployment_set_pinned(pin, false))
             .expect("failed to unpin deployments");
