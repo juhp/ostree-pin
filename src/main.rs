@@ -1,5 +1,7 @@
+use ostree::Sysroot;
+
 fn main() {
-    let sysroot = &ostree::Sysroot::new_default();
+    let sysroot = Sysroot::new_default();
     sysroot
         .load(gio::NONE_CANCELLABLE)
         .expect("failed to load sysroot");
