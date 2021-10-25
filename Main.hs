@@ -1,10 +1,10 @@
-{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 
 module Main (main) where
 
-import BasicPrelude
+--import BasicPrelude
 
+import Control.Monad
 import GI.Gio.Objects.Cancellable
 import GI.OSTree
 import System.Environment (getArgs)

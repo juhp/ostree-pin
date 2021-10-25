@@ -4,7 +4,6 @@
 [![GPL-3 license](https://img.shields.io/badge/license-GPL--3-blue.svg)](LICENSE)
 [![Stackage Lts](http://stackage.org/package/ostree-pin/badge/lts)](http://stackage.org/lts/package/ostree-pin)
 [![Stackage Nightly](http://stackage.org/package/ostree-pin/badge/nightly)](http://stackage.org/nightly/package/ostree-pin)
-[![Build Status](https://travis-ci.com/juhp/ostree-pin.svg?branch=master)](https://travis-ci.com/juhp/ostree-pin)
 
 ## Summary
 

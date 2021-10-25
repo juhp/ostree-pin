@@ -23,7 +23,6 @@ executable ostree-pin
   main-is:             Main.hs
 
   build-depends:       base < 5
-                     , basic-prelude
                      , gi-gio
                      , gi-ostree
 
