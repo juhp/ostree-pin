@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE OverloadedStrings, TypeApplications #-}
 
 module Main (main) where
 
@@ -15,15 +15,18 @@ main = do
   unless (null args) $
     error "Usage: without arguments to pin current deployment"
   sysroot <- sysrootNewDefault
-  sysrootLoad sysroot noCancellable
-  booted <- sysrootGetBootedDeployment sysroot
-  pinned <- deploymentIsPinned booted
-  if pinned then return ()
-    else do
-    deploys <- sysrootGetDeployments sysroot
-    pins <- filterM deploymentIsPinned deploys
-    case pins of
-      [] -> return ()
-      [pin] -> sysrootDeploymentSetPinned sysroot pin False
-      _ -> putStrLn "more than one deployment already pinned"
-  sysrootDeploymentSetPinned sysroot booted True
+  sysrootLoad sysroot (Nothing @Cancellable)
+  mbooted <- sysrootGetBootedDeployment sysroot
+  case mbooted of
+    Nothing -> error "No booted deployment found!"
+    Just booted -> do
+      pinned <- deploymentIsPinned booted
+      if pinned then return ()
+        else do
+        deploys <- sysrootGetDeployments sysroot
+        pins <- filterM deploymentIsPinned deploys
+        case pins of
+          [] -> return ()
+          [pin] -> sysrootDeploymentSetPinned sysroot pin False
+          _ -> putStrLn "more than one deployment already pinned"
+      sysrootDeploymentSetPinned sysroot booted True
