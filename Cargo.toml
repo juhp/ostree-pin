@@ -1,13 +1,13 @@
 [package]
 name = "ostree-pin"
 version = "0.1.0"
-edition = "2018"
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies.ostree]
-version = "0.13.1"
+version = "0.16.0"
 features = ["v2018_3"]
 
 [dependencies]
-gio = "0.14.6"
+gio = "0.15.12"
