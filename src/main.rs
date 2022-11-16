@@ -2,6 +2,7 @@ use ostree::Sysroot;
 
 fn main() {
     let sysroot = Sysroot::new_default();
+    sysroot.set_mount_namespace_in_use();
     sysroot
         .load(gio::Cancellable::NONE)
         .expect("failed to load sysroot");
@@ -17,4 +18,5 @@ fn main() {
             .deployment_set_pinned(&booted, true)
             .expect("failed to pin booted");
     }
+    sysroot.unload();
 }
