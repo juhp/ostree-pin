@@ -12,11 +12,30 @@ eg useful on Fedora Silverblue for preserving
 the current booted deployment image.\
 The idea is to run this before booting into a new staged deployment.
 
+## Help
+```shellsession
+$ ostree-pin --help
+Tool to update pinned ostree deployment
+
+Usage: ostree-pin [-n|--dryrun] [-p|--rollback]
+
+  See https://github.com/juhp/ostree-pin#readme
+
+Available options:
+  -h,--help                Show this help text
+  -n,--dryrun              Dry run
+  -p,--rollback            Pin previous (rollback) deployment
+```
+
 ## Install
 Needs the Fedora `ostree-devel` package or `libostree-dev` (Debian/Ubuntu).
 Also needs ghc and cabal-install.
 
 $ cabal install
+
+or from git:
+
+$ stack install
 
 ## Usage
 
