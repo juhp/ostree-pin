@@ -19,6 +19,8 @@ main =
     -- FIXME allow deployment# ?
     program dryrun rollback = do
       sysroot <- sysrootNewDefault
+      -- see https://github.com/ostreedev/ostree/pull/2779
+      sysrootInitializeWithMountNamespace sysroot (Nothing @Cancellable)
       sysrootLoad sysroot (Nothing @Cancellable)
       mdeploy <-
         if rollback

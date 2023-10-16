@@ -24,7 +24,7 @@ executable ostree-pin
 
   build-depends:       base < 5
                      , gi-gio
-                     , gi-ostree
+                     , gi-ostree >= 1.0.18
                      , simple-cmd-args
 
   default-language:    Haskell2010
