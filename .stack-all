@@ -1,0 +1,3 @@
+[versions]
+# lts-19 fails to build gi-glib GI.GLib.Functions
+oldest = lts-20
