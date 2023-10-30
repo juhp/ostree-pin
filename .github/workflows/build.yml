@@ -6,7 +6,7 @@ on:
     branches: [ haskell ]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-23.10
     strategy:
       matrix:
         ghc: ['9.6', '9.4', '9.2', '9.0', '8.10']
