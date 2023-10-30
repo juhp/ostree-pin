@@ -20,7 +20,7 @@ source-repository head
   location:            https://github.com/juhp/ostree-pin.git
 
 executable ostree-pin
-  main-is:             Main.hs
+  main-is:             src/Main.hs
 
   build-depends:       base < 5
                      , gi-gio
