@@ -37,15 +37,17 @@ main =
         Just deploy -> do
           pinned <- deploymentIsPinned deploy
           if pinned
-            then return ()
+            then putStrLn "deployment already pinned"
             else do
             deploys <- sysrootGetDeployments sysroot
             pins <- filterM deploymentIsPinned deploys
             case pins of
               [] -> return ()
               [pin] ->
-                unless dryrun $
+                unless dryrun $ do
+                putStrLn "unpinning other deployment"
                 sysrootDeploymentSetPinned sysroot pin False
               _ -> putStrLn "more than one deployment already pinned"
-          unless dryrun $
-            sysrootDeploymentSetPinned sysroot deploy True
+            unless dryrun $ do
+              putStrLn "pinning current deployment"
+              sysrootDeploymentSetPinned sysroot deploy True
