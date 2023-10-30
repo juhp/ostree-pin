@@ -7,6 +7,7 @@ import Data.Maybe (isNothing)
 import GI.Gio.Objects.Cancellable
 import GI.OSTree
 import SimpleCmdArgs
+import System.Posix.User (getEffectiveUserID)
 
 -- FIXME un/pin all?
 main :: IO ()
@@ -19,6 +20,9 @@ main =
   where
     -- FIXME allow deployment# ?
     program dryrun rollback = do
+      euid <- getEffectiveUserID
+      unless (euid == 0) $
+        putStrLn "this program should be run with sudo"
       sysroot <- sysrootNewDefault
       -- see https://github.com/ostreedev/ostree/pull/2779
       sysrootInitializeWithMountNamespace sysroot (Nothing @Cancellable)

@@ -27,6 +27,7 @@ executable ostree-pin
                      , gi-gio
                      , gi-ostree >= 1.0.18
                      , simple-cmd-args
+                     , unix
 
   default-language:    Haskell2010
   ghc-options:         -Wall
