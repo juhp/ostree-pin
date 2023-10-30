@@ -52,9 +52,10 @@ main =
               [] -> return ()
               [pin] ->
                 unless dryrun $ do
-                putStrLn "unpinning other deployment"
+                putStrLn "removing previous pin"
                 sysrootDeploymentSetPinned sysroot pin False
               _ -> putStrLn "more than one deployment already pinned"
             unless dryrun $ do
-              putStrLn "pinning current deployment"
+              putStrLn $ "pinning " ++
+                (if rollback then "previous" else "current") ++ " deployment"
               sysrootDeploymentSetPinned sysroot deploy True

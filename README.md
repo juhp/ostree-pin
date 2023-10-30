@@ -24,6 +24,9 @@ Available options:
   -p,--rollback            Pin previous (rollback) deployment
 ```
 
+If you forgot to pin the previous deployment before booting into a newer one,
+you can use `--rollback` to pin it from the newer deployment.
+
 ## Install
 Needs the Fedora `ostree-devel` package (or better `ghc-gi-ostree-devel`)
 or `libostree-dev` (Debian/Ubuntu). Also needs ghc and cabal-install (or stack).

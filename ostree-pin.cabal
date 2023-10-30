@@ -1,6 +1,6 @@
 cabal-version:       2.0
 name:                ostree-pin
-version:             0.1
+version:             0.1.1
 synopsis:            Tool to re-pin ostree deployments
 description:         CLI tool for easily pinning the current ostree deployment
 license:             GPL-3
