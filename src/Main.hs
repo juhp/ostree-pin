@@ -8,6 +8,7 @@ import GI.Gio.Objects.Cancellable
 import GI.OSTree
 import SimpleCmdArgs
 
+-- FIXME un/pin all?
 main :: IO ()
 main =
   simpleCmdArgs Nothing "Tool to update pinned ostree deployment"

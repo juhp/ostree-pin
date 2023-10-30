@@ -1,19 +1,20 @@
 cabal-version:       2.0
 name:                ostree-pin
 version:             0.1
-synopsis:            Tool to pin ostree deployments
-description:         Tool to pin ostree deployments
-homepage:            https://github.com/juhp/ostree-pin
-bug-reports:         https://github.com/juhp/ostree-pin/issues
+synopsis:            Tool to re-pin ostree deployments
+description:         CLI tool for easily pinning the current ostree deployment
 license:             GPL-3
 license-file:        LICENSE
-author:              Jens Petersen
-maintainer:          juhpetersen@gmail.com
-copyright:           2019 Jens Petersen
+author:              Jens Petersen <juhpetersen@gmail.com>
+maintainer:          Jens Petersen <juhpetersen@gmail.com>
+copyright:           2019-2021, 2023 Jens Petersen
+category:            Utility
+homepage:            https://github.com/juhp/ostree-pin
+bug-reports:         https://github.com/juhp/ostree-pin/issues
 build-type:          Simple
 extra-doc-files:     README.md
-                   , CHANGELOG.md
-tested-with:         GHC == 8.4.4, GHC == 8.6.4
+                     CHANGELOG.md
+tested-with:         GHC == 9.2.8, GHC == 9.4.7, GHC == 9.6.3
 
 source-repository head
   type:                git
