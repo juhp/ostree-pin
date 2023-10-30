@@ -13,12 +13,13 @@ The idea is to run this before booting into a new staged deployment.
 ```
 Tool to update pinned ostree deployment
 
-Usage: ostree-pin [-n|--dryrun] [-p|--rollback]
+Usage: ostree-pin [--version] [-n|--dryrun] [-p|--rollback]
 
   See https://github.com/juhp/ostree-pin#readme
 
 Available options:
   -h,--help                Show this help text
+  --version                Show version
   -n,--dryrun              Dry run
   -p,--rollback            Pin previous (rollback) deployment
 ```

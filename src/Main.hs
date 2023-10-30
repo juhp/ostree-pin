@@ -9,10 +9,12 @@ import GI.OSTree
 import SimpleCmdArgs
 import System.Posix.User (getEffectiveUserID)
 
+import Paths_ostree_pin
+
 -- FIXME un/pin all?
 main :: IO ()
 main =
-  simpleCmdArgs Nothing "Tool to update pinned ostree deployment"
+  simpleCmdArgs (Just version) "Tool to update pinned ostree deployment"
   "See https://github.com/juhp/ostree-pin#readme" $
   program
   <$> switchWith 'n' "dryrun" "Dry run"
