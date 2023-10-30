@@ -14,7 +14,7 @@ import Paths_ostree_pin
 -- FIXME un/pin all?
 main :: IO ()
 main =
-  simpleCmdArgs (Just version) "Tool to update pinned ostree deployment"
+  simpleCmdArgs (Just version) "Tool to update ostree deployment pin"
   "See https://github.com/juhp/ostree-pin#readme" $
   program
   <$> switchWith 'n' "dryrun" "Dry run"

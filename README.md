@@ -3,15 +3,20 @@
 [![GPL-3 license](https://img.shields.io/badge/license-GPL--3-blue.svg)](LICENSE)
 
 ## Summary
-A small utility to "pin" the current ostree deployment.
+A small utility to move the ostree "pin" to the current ostree deployment.
 eg useful on Fedora Silverblue for preserving
 the current booted deployment image.
-The idea is to run this before booting into a new staged deployment.
+It can be run before booting into a new staged deployment,
+or afterwards using the `--rollback` option.
 
 ## Help
+`$ ostree-pin --version`
+```
+0.1.1
+```
 `$ ostree-pin --help`
 ```
-Tool to update pinned ostree deployment
+Tool to update ostree deployment pin
 
 Usage: ostree-pin [--version] [-n|--dryrun] [-p|--rollback]
 
@@ -26,6 +31,13 @@ Available options:
 
 If you forgot to pin the previous deployment before booting into a newer one,
 you can use `--rollback` to pin it from the newer deployment.
+
+## Usage
+```shellsession
+$ sudo ostree-pin
+removing previous pin
+pinning current deployment
+```
 
 ## Install
 Needs the Fedora `ostree-devel` package (or better `ghc-gi-ostree-devel`)
